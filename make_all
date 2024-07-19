@@ -1,0 +1,1 @@
+cd $MAKE_DIR && bash makeall.sh ${1} ${2}
