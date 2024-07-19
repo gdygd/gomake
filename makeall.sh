@@ -67,10 +67,10 @@ echo "buildate2:${BUILD_DATE} ${BUILD_DATE2}  MAJOR:${VER_MAJOR} MINOR:${VER_MIN
 
 ### Process build command ###
 ### You must input it according to your build environment. ###
-#cd $YOUR_SRC
+cd $YOUR_SRC
 
 ### Go Makefile build command
-#make build
+make build
 
 cd $MAKE_DIR
 
@@ -88,5 +88,5 @@ echo ${VER_PATCH} >> ./patch.txt
 
 strversion="${BUILD_DATE}.${VER_MAJOR}.${VER_MINOR}.${VER_PATCH}"
 echo "version:${strversion}"
-rm $YOUR_BIN/apiversion.txt
-echo ${strversion} >> $YOUR_BIN/apiversion.txt	
+rm $YOUR_BIN/version.txt
+echo ${strversion} >> $YOUR_BIN/version.txt	
