@@ -3,7 +3,8 @@
 echo "Compile and Get your process version "
 
 ###Manage build version
-# param 0 or empty : no version up
+# empty : no version up
+# param 0 : only build date up
 # param 1 : only patch version up
 # param 2 : only minor version up
 # param 3: only major version up
@@ -22,7 +23,12 @@ BUILDTP=`expr ${1} + 0`
 
 BUILDTP=$((BUILDTP))
 
-if [ ${BUILDTP} -eq 1 ]; then
+if [ ${BUILDTP} -eq 0 ]; then
+	echo "Compile source (only build date up) "	
+    BUILD_DATE=${BUILD_DATE2}
+    echo "BUILDDT" ${BUILD_DATE}
+
+elif [ ${BUILDTP} -eq 1 ]; then
 	echo "Compile source (patch version up) "
 
 	echo "buildate1:${BUILD_DATE1} MAJOR:${VER_MAJOR} MINOR:${VER_MINOR} PATCH:${VER_PATCH}"

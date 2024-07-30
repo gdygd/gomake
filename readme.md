@@ -15,7 +15,8 @@ $YOUR_SRC : your main source path
 
 
 ## usage 
- - param 0 or empty : no version up
+ - empty : no version up
+ - param 0 : only build date up
  - param 1 : only patch version up
  - param 2 : only minor version up
  - param 3: only major version up
