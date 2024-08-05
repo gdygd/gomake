@@ -3,11 +3,11 @@
 echo "Compile and Get your process version "
 
 ###Manage build version
-# empty : no version up
-# param 0 : only build date up
-# param 1 : only patch version up
-# param 2 : only minor version up
-# param 3: only major version up
+# empty or 0: no version up
+# param 1 : only build date up
+# param 2 : only patch version up
+# param 3 : only minor version up
+# param 4: only major version up
 
 VER_MAJOR=`cat ./major.txt`
 VER_MINOR=`cat ./minor.txt`
@@ -19,16 +19,18 @@ BUILD_DATE=${BUILD_DATE2}
 strversion=""
 
 echo "1st param = ${1}"
-BUILDTP=`expr ${1} + 0`
+#BUILDTP=`expr ${1} + 0`
+BUILDTP=${1}
 
 BUILDTP=$((BUILDTP))
+#echo "BUILDTP = ${BUILDTP}"
 
-if [ ${BUILDTP} -eq 0 ]; then
+if [ ${BUILDTP} = 1 ]; then
 	echo "Compile source (only build date up) "	
     BUILD_DATE=${BUILD_DATE2}
     echo "BUILDDT" ${BUILD_DATE}
 
-elif [ ${BUILDTP} -eq 1 ]; then
+elif [ ${BUILDTP} = 2 ]; then
 	echo "Compile source (patch version up) "
 
 	echo "buildate1:${BUILD_DATE1} MAJOR:${VER_MAJOR} MINOR:${VER_MINOR} PATCH:${VER_PATCH}"
@@ -38,7 +40,7 @@ elif [ ${BUILDTP} -eq 1 ]; then
     BUILD_DATE=${BUILD_DATE2}
     echo "BUILDDT" ${BUILD_DATE}
     
-elif [ ${BUILDTP} = 2 ]; then
+elif [ ${BUILDTP} = 3 ]; then
 	echo "Compile source (minor version up) "
 
 	echo "buildate1:${BUILD_DATE1} MAJOR:${VER_MAJOR} MINOR:${VER_MINOR} PATCH:${VER_PATCH}"
@@ -49,7 +51,7 @@ elif [ ${BUILDTP} = 2 ]; then
     BUILD_DATE=${BUILD_DATE2}
     echo "BUILDDT" ${BUILD_DATE}
 
-elif [ ${BUILDTP} = 3 ]; then
+elif [ ${BUILDTP} = 4 ]; then
 	echo "Compile source (major version up) "
 
 	echo "buildate1:${BUILD_DATE1} MAJOR:${VER_MAJOR} MINOR:${VER_MINOR} PATCH:${VER_PATCH}"

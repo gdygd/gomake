@@ -15,11 +15,11 @@ $YOUR_SRC : your main source path
 
 
 ## usage 
- - empty : no version up
- - param 0 : only build date up
- - param 1 : only patch version up
- - param 2 : only minor version up
- - param 3: only major version up
+ - empty or 0: no version up
+ - param 1 : only build date up
+ - param 2 : only patch version up
+ - param 3 : only minor version up
+ - param 4: only major version up
 
  **Ex) make**
   * **ubuntu@ubuntu:~/work/go/src/gomake$ make_all**
