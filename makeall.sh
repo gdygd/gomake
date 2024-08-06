@@ -16,6 +16,11 @@ BUILD_DATE1=`cat ./builddt.txt`
 BUILD_DATE2=`date +%Y%m%d`
 BUILD_DATE=${BUILD_DATE2}
 
+VER_MAJOR=$(echo "${VER_MAJOR//[$'\t\r\n ']}")
+VER_MINOR=$(echo "${VER_MINOR//[$'\t\r\n ']}")
+VER_PATCH=$(echo "${VER_PATCH//[$'\t\r\n ']}")
+BUILD_DATE1=$(echo "${BUILD_DATE1//[$'\t\r\n ']}")
+
 strversion=""
 
 echo "1st param = ${1}"
